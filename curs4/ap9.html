@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+        $(document).ready(function () {
+          $("button").click(function () {
+            $.getJSON(
+              // "https://programming-quotes-api.herokuapp.com/quotes/random",
+              "https://official-joke-api.appspot.com/jokes/programming/random",
+              function (result) {
+                console.log(result);
+                let key = Math.floor(Math.random() * 50);
+                $("div#demo").append(
+                  result.type
+                );
+                
+              }
+            );
+          });
+        });
+
+        
+      </script>
+</body>
+</html>
